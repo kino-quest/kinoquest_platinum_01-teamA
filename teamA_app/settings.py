@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -74,14 +75,15 @@ WSGI_APPLICATION = 'teamA_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# settings.py
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', 'teamadb'),
-        'USER': os.environ.get('POSTGRES_USER', 'teamadmin'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'secret123'),
-        'HOST': os.environ.get('POSTGRES_HOST', 'db'),
-        'PORT': os.environ.get('POSTGRES_PORT', '5432'),
+        'NAME': os.environ['POSTGRES_DB'],        
+        'USER': os.environ['POSTGRES_USER'],      
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': 'db',  
+        'PORT': '5432',
     }
 }
 
