@@ -1,0 +1,5 @@
+Django==4.2.18
+psycopg2==2.9.10
+# ブートストラップ
+django-bootstrap4==24.4
+django-bootstrap-datepicker-plus==5.0.5
