@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 # カスタマーテーブル
-class Customer(models.Model):
+class CustomUser(models.Model):
   username = models.CharField(max_length=30)
   mail = models.EmailField(max_length=255)
   password = models.CharField(max_length=255)
