@@ -22,4 +22,4 @@ class Category(models.Model):
     ("8", "C++"),
     ("9", "Go"),
   ]
-  catergory_name = models.CharField(max_length=50, choices=OPTION_CHOICES)
+  category_name = models.CharField(max_length=50, choices=OPTION_CHOICES)
