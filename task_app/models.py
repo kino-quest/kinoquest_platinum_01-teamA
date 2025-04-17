@@ -5,7 +5,7 @@ from django.db import models
 # カスタマーテーブル
 class CustomUser(models.Model):
   username = models.CharField(max_length=30)
-  mail = models.EmailField(max_length=255)
+  mail = models.EmailField(max_length=254)
   password = models.CharField(max_length=255)
 
 
@@ -18,8 +18,8 @@ class Category(models.Model):
     ("4", "TypeScript"),
     ("5", "Java"),
     ("6", "C"),
-    ("7", "C+"),
+    ("7", "C#"),
     ("8", "C++"),
     ("9", "Go"),
   ]
-  catrgory_name = models.CharField(max_length=50, choices=OPTION_CHOICES)
+  catergory_name = models.CharField(max_length=50, choices=OPTION_CHOICES)
