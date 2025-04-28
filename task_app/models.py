@@ -3,10 +3,10 @@ from django.db import models
 # Create your models here.
 
 # カスタマーテーブル
-class CustomUser(models.Model):
-  username = models.CharField(max_length=30)
-  mail = models.EmailField(max_length=254)
-  password = models.CharField(max_length=255)
+# class CustomUser(models.Model):
+#   username = models.CharField(max_length=30)
+#   mail = models.EmailField(max_length=254)
+#   password = models.CharField(max_length=255)
 
 
 # カテゴリーテーブル
