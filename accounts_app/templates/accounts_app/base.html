@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}メモセロ{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          {% comment %} リンク先は後ほど追加する {% endcomment %}
+          <a href="" class="navbar-logo">
+            {% comment %} 画像は後ほど追加する {% endcomment %}
+            <img src="" alt="" />
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+  </body>
+</html>
