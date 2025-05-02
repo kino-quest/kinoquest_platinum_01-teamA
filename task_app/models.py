@@ -1,13 +1,5 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-# Create your models here.
-
-# カスタマーテーブル
-# class CustomUser(models.Model):
-#   username = models.CharField(max_length=30)
-#   mail = models.EmailField(max_length=254)
-#   password = models.CharField(max_length=255)
-
 
 # カテゴリーテーブル
 class Category(models.Model):
