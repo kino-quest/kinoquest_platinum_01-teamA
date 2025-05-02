@@ -1,3 +1,12 @@
 from django.shortcuts import render
+from .forms import SignupForm
 
-# Create your views here.
+
+# 新規登録
+def signup(request):
+    print("signup")
+    form = SignupForm()
+    params = {
+        'form': form,
+    }
+    return render(request, 'accounts_app/signup.html', params)
