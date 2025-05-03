@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
 class SignupForm(UserCreationForm):
     class Meta:
@@ -21,3 +21,19 @@ class SignupForm(UserCreationForm):
 
         self.fields['password2'].label = '確認用パスワード'
         self.fields['password2'].widget.attrs['placeholder'] = '確認用パスワードを入力してください'
+
+class LoginForm(AuthenticationForm):
+    class Meta:
+        model = get_user_model()
+        fields = ['username', 'password']
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ''
+
+        self.fields['username'].label = 'ユーザー名'
+        self.fields['username'].widget.attrs['placeholder'] = 'ユーザー名を入力してください '
+
+        self.fields['password'].label = 'パスワード'
+        self.fields['password'].widget.attrs['placeholder'] = 'パスワードを入力してください'
+
