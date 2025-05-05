@@ -1,5 +1,5 @@
-{% extends 'accounts_app/base.html' %} {% block title %} 新規登録 {% endblock %}
-{% block content %}
+{% extends 'accounts_app/base.html' %} 
+{% block title %} 新規登録 | メモセロ {% endblock %} {% block content %}
 
 <h1>新規登録</h1>
 <form action="{% url 'signup' %}" method="post">
@@ -24,12 +24,8 @@
     {{ form.password2.label_tag }}<br />
     {{ form.password2 }} {{ form.password2.errors }}
   </div>
+  <p><a href="{% url 'login' %}">ログインはこちら</a></p>
 
-  <button type="submit">新規登録</button>
-  {% comment %}
-  <p><input type="submit" class="" value="新規登録" /></p>
-  {% endcomment %}
+  <button class="" type="submit" value="新規登録">新規登録</button>
 </form>
-
-<p><a href="{% url 'login' %}">ログインはこちら</a></p>
 {% endblock%}
