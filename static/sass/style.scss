@@ -1,3 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap");
+
+$color-primary: rgba(175, 179, 255, 0.2);
+$color-secondary: #a6a0e9;
+$enable-grid-classes: True;
+$font-color: black;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  background-color: rgba(175, 179, 255, 0.2);
+  background-color: $color-primary;
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.btn {
+  background-color: $color-secondary;
+  &:hover {
+    background-color: #b9b4f4;
+  }
+}
+
+.link-style {
+  color: $font-color;
+  text-decoration: none;
 }
