@@ -1,31 +1,38 @@
 {% extends 'accounts_app/base.html' %} 
-{% block title %} 新規登録 | メモセロ {% endblock %} {% block content %}
+{% block title %} 新規登録 | メモセロ {% endblock %}
+{% block content %}
 
-<h1>新規登録</h1>
-<form action="{% url 'signup' %}" method="post">
-  {% csrf_token %}
+<h1 class="text-center">新規登録</h1>
+<div class="d-flex justify-content-center">
+  <form action="{% url 'signup' %}" method="post">
+    {% csrf_token %}
 
-  <div class="form-group">
-    {{ form.username.label_tag }}<br />
-    {{ form.username }} {{ form.username.errors }}
-  </div>
+    <div class="row mb-3">
+      {{ form.username.label_tag }}
+      {{ form.username }}
+      {{ form.errors }}
+    </div>
 
-  <div class="form-group">
-    {{ form.email.label_tag }}<br />
-    {{ form.email }} {{ form.email.errors }}
-  </div>
+    <div class="row mb-3">
+      {{ form.email.label_tag }}
+      {{ form.email }}
+      {{ form.email.errors }}
+    </div>
 
-  <div class="form-group">
-    {{ form.password1.label_tag }}<br />
-    {{ form.password1 }} {{ form.password1.errors }}
-  </div>
+    <div class="row mb-3">
+      {{ form.password1.label_tag }}
+      {{ form.password1 }}
+      {{ form.password1.errors }}
+    </div>
 
-  <div class="form-group">
-    {{ form.password2.label_tag }}<br />
-    {{ form.password2 }} {{ form.password2.errors }}
-  </div>
-  <p><a href="{% url 'login' %}">ログインはこちら</a></p>
+    <div class="row mb-3">
+      {{ form.password2.label_tag }}
+      {{ form.password2}}
+      {{ form.password2.errors}}
+    </div>
+    <p><a href="{% url 'login' %}" class="link-style">ログインはこちら</a></p>
 
-  <button class="" type="submit" value="新規登録">新規登録</button>
-</form>
+    <button class="btn w-100 py-2" type="submit" value="新規登録">新規登録</button>
+  </form>
+</div>
 {% endblock%}

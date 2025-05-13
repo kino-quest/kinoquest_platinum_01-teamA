@@ -1,3 +1,4 @@
+from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
@@ -10,30 +11,45 @@ class SignupForm(UserCreationForm):
         super().__init__(*args, **kwargs)
         self.label_suffix = ''
 
+        field_settings = {
+            'username': 'ユーザー名を入力してください',
+            'email': 'メールアドレスを入力してください',
+            'password1': 'パスワードを入力してください',
+            'password2': '確認用パスワードを入力してください',
+        }
+
+        for field_name, placeholder in field_settings.items():
+            field = self.fields[field_name]
+            field.widget.attrs['class'] = 'form-control w-40'
+            field.widget.attrs['placeholder'] = placeholder
+        
         self.fields['username'].label = 'ユーザー名'
-        self.fields['username'].widget.attrs['placeholder'] = 'ユーザー名を入力してください'
-
         self.fields['email'].label = 'メールアドレス'
-        self.fields['email'].widget.attrs['placeholder'] = 'メールアドレスを入力してください'
-
         self.fields['password1'].label = 'パスワード'
-        self.fields['password1'].widget.attrs['placeholder'] = 'パスワードを入力してください'
-
         self.fields['password2'].label = '確認用パスワード'
-        self.fields['password2'].widget.attrs['placeholder'] = '確認用パスワードを入力してください'
 
 class LoginForm(AuthenticationForm):
-    class Meta:
-        model = get_user_model()
-        fields = ['username', 'password']
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.label_suffix = ''
 
+        field_settings = {
+            'username': 'ユーザー名を入力してください',
+            'password': 'パスワードを入力してください',
+        }
+
+        for field_name, placeholder in field_settings.items():
+            field = self.fields[field_name]
+            field.widget.attrs['class'] = 'form-control w-40'
+            field.widget.attrs['placeholder'] = placeholder
+
         self.fields['username'].label = 'ユーザー名'
-        self.fields['username'].widget.attrs['placeholder'] = 'ユーザー名を入力してください '
-
         self.fields['password'].label = 'パスワード'
-        self.fields['password'].widget.attrs['placeholder'] = 'パスワードを入力してください'
-
+    
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        
+        if 'admin' in username:
+            raise forms.ValidationError('ユーザー名に "admin" を含めることはできません。')
+        return username
