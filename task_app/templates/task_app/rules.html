@@ -1,8 +1,12 @@
 {% extends 'task_app/base.html' %}
 {% block title %}利用規約 | メモセロ{% endblock %}
 {% block content %}
+
 <div class="container py-4">
-    <h1 class="mb-4">利用規約</h1>
+    <div class="header-container">
+        <h1 class="mb-0">利用規約</h1>
+        <a href="{% url 'home' %}" class="close-circle">×</a>
+    </div>
     <div class="card">
         <div class="card-body">
             <h2 class="h5 mb-3">1. サービスの利用について</h2>
@@ -15,7 +19,6 @@
                 <li>他のユーザーに迷惑をかける行為</li>
                 <li>サービスの運営を妨害する行為</li>
             </ul>
-            
             <h2 class="h5 mb-3 mt-4">3. 免責事項</h2>
             <p>本サービスの利用により生じた損害について、運営者は一切の責任を負いません。</p>
         </div>
