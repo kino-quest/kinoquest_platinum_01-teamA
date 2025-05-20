@@ -28,3 +28,33 @@ body {
   color: $font-color;
   text-decoration: none;
 }
+
+nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  .navbar-left {
+    .navbar-logo {
+      img {
+        height: 40px;
+      }
+    }
+  }
+
+  .navbar-right {
+    .user-edit {
+      height: 40px;
+      margin-right: 40px;
+    }
+  }
+}
+
+ul.errorlist {
+  color: red;
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 5px 0;
+}
