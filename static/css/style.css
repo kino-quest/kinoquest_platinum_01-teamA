@@ -14,7 +14,6 @@ body {
 .btn {
   background-color: #a6a0e9;
 }
-
 .btn:hover {
   background-color: #b9b4f4;
 }
@@ -54,3 +53,5 @@ ul.errorlist {
   margin: 0 0 5px 0;
 }
 /*# sourceMappingURL=style.css.map */
+=======
+}

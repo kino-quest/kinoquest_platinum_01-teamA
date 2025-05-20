@@ -1,0 +1,32 @@
+{% extends 'task_app/base.html' %}
+{% block title %} ホーム | メモセロ {% endblock %}
+{% block content %}
+
+<div class="min-vh-100 d-flex flex-column">
+  <main class="flex-grow-1">
+    <div class="container py-4">
+      <h1 class="text-center mb-4">メモセロへようこそ</h1>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-body">
+              <p class="text-center mb-0">タスク管理をもっと簡単に、もっと楽しく</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-3 bg-light">
+    <div class="container">
+      <nav class="d-flex justify-content-center">
+        <ul class="list-unstyled mb-0 d-flex gap-3">
+          <li><a href="{% url 'privacy' %}" class="text-decoration-none text-secondary">プライバシーポリシー</a></li>
+          <li><a href="{% url 'rules' %}" class="text-decoration-none text-secondary">利用規約</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</div>
+{% endblock%}
