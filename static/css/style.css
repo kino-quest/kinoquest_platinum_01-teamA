@@ -23,6 +23,7 @@ body {
   text-decoration: none;
 }
 
+
 .close-circle {
   width: 40px;
   height: 40px;
@@ -61,4 +62,36 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 1rem;
+
+nav.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav.navbar .navbar-left .navbar-logo img {
+  height: 40px;
+}
+
+nav.navbar .navbar-right .user-edit {
+  height: 40px;
+  margin-right: 40px;
+}
+
+ul.errorlist {
+  color: red;
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 5px 0;
+}
+/*# sourceMappingURL=style.css.map */
+
 }
