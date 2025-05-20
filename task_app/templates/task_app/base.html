@@ -1,11 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メモセロ</title>
+    <title>{% block title %} メモセロ {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png" />
 </head>
 <body>
-    <h1>home</h1>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="" class="navbar-logo">
+                    <img src="{% static 'images/header-logo.png' %}" alt="メモセロのロゴ画像です">
+                </a>
+            </div>
+            <div class="navbar-right">
+                <a href="{% url 'user_settings' %}" class="link-style user-edit">{{ request.user.username }}</a>
+            </div>
+        </nav>
+    </header>
 </body>
 </html>
