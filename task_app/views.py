@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import TodoForm
 
 # Create your views here.
 def home(request):
@@ -10,3 +11,15 @@ def privacy(request):
 
 def rules(request):
     return render(request, 'task_app/rules.html')
+
+def add_task(request):
+    if request.method == 'POST':
+        form = TodoForm(request.POST)
+        if form.is_valid():
+            todo = form.save(commit=False)
+            todo.user = request.user
+            todo.save()
+            return redirect('home')
+    else:
+        form = TodoForm()
+    return render(request, 'task_app/add_task.html', {'form': form})
