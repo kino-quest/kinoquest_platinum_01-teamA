@@ -15,6 +15,8 @@ class Category(models.Model):
     ("9", "Go"),
   ]
   category_name = models.CharField(max_length=50, choices=OPTION_CHOICES)
+  def __str__(self):
+        return self.category_name
 
 # Todoテーブル - 理解度ステータス設定
 class StatusLevel(models.IntegerChoices):
