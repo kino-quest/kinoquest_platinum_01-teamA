@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from .forms import TodoForm
-from django.contrib import messages
+from .models import Todo
 
 # Create your views here.
 def home(request):
-    print("home")
-    return render(request, 'task_app/home.html')
+    print('home')
+    tasks = Todo.objects.all()
+    return render(request, 'task_app/home.html', {'tasks': tasks})
 
 def privacy(request):
     return render(request, 'task_app/privacy.html')
@@ -26,3 +27,17 @@ def add_task(request):
     else:
         form = TodoForm()
     return render(request, 'task_app/add_task.html', {'form': form})
+
+def edit_task(request, task_id):
+    task = Todo.objects.get(id=task_id)
+    return render(request, 'task_app/edit_task.html', {'task': task})
+
+def delete_task(request, task_id):
+    task = Todo.objects.get(id=task_id)
+    task.delete()
+    return redirect('home')
+
+def solve_task(request, task_id):
+    task = Todo.objects.get(id=task_id)
+    return render(request, 'task_app/solve_task.html', {'task': task})
+

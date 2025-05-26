@@ -17,7 +17,7 @@ class Category(models.Model):
     category_name = models.IntegerField(choices=CategoryLevel.choices)
     
     def __str__(self):
-        return self.category_name
+      return self.get_category_name_display()
 
 
 # Todoテーブル - 理解度ステータス設定
