@@ -7,10 +7,33 @@
     <div class="container py-4">
       <h1 class="text-center mb-4">メモセロへようこそ</h1>
       <div class="row justify-content-center">
+        <div>
+          <a href="{% url 'add_task' %}" class="add-task">新しいタスクを追加する</a>
+        </div>
         <div class="col-md-8">
           <div class="card">
             <div class="card-body">
-              <p class="text-center mb-0">タスク管理をもっと簡単に、もっと楽しく</p>
+              <p>問題一覧</p>
+              <table border="5" class="table table-bordered">
+                <tr>
+                    <th>問題名</th>
+                    <th>前に解いた日</th>
+                    <th>理解度</th>
+                    <th>カテゴリー</th>
+
+                </tr>
+                {% for task in tasks %} <!-- views.pyで格納したデータを展開。for文で1つずつ取り出す-->
+                <tr>
+                    <td>{{ task.task_name }}</td>
+                    <td>{{ task.solved_latest_date }}</td>
+                    <td>{{ task.understanding_status }}</td>
+                    <td>{{ task.category_id }}</td>
+                    <td><a href="{% url 'edit_task' task.id %}" class="create-btn">編集</a></td>
+                    <td><a href="{% url 'delete_task' task.id %}" class="create-btn">削除</a></td>
+                    <td><a href="{% url 'solve_task' task.id %}" class="create-btn">解く</a></td>
+                </tr>
+                {% endfor %}
+            </table>
             </div>
           </div>
         </div>
