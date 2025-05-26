@@ -5,7 +5,7 @@ from .models import Todo
 # Create your views here.
 def home(request):
     print('home')
-    tasks = Todo.objects.all()
+    tasks = Todo.objects.filter(user=request.user)
     return render(request, 'task_app/home.html', {'tasks': tasks})
 
 def privacy(request):
