@@ -2,6 +2,7 @@
 
 $color-primary: rgba(175, 179, 255, 0.2);
 $color-secondary: #a6a0e9;
+$color-tertiary: #656ED3;
 $enable-grid-classes: True;
 $font-color: black;
 
@@ -39,7 +40,7 @@ body {
   padding: 0;
   font-size: 20px;
   line-height: 1;
-  background-color: #656ED3;
+  background-color: $color-tertiary;
   color: white;
   text-decoration: none;
 }
@@ -59,7 +60,7 @@ body {
   width: 50px;
   height: 30px;
   border-radius: 10%;
-  border: 1px solid #656ED3;
+  border: 1px solid $color-tertiary;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +68,7 @@ body {
   font-size: 20px;
   line-height: 1;
   background-color: white;
-  color: #656ED3;
+  color: $color-tertiary;
   text-decoration: none;
 }
 .create-btn:hover{
@@ -192,7 +193,7 @@ ul.errorlist {
   }
 
   input[type="radio"]:checked + span {
-    background: #6c63ff;
+    background: $color-tertiary;
     color: #fff;
   }
 }

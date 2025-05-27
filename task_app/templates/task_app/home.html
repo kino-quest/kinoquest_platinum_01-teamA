@@ -28,7 +28,7 @@
                     <td>{{ task.solved_latest_date }}</td>
                     <td>{{ task.understanding_status }}</td>
                     <td>{{ task.category_id }}</td>
-                    <td><a href="{% url 'edit_task' task.id %}" class="create-btn">編集</a></td>
+                    <td><a href="{% url 'update_task' task.id %}" class="create-btn">編集</a></td>
                     <td><a href="{% url 'delete_task' task.id %}" class="create-btn">削除</a></td>
                     <td><a href="{% url 'solve_task' task.id %}" class="create-btn">解く</a></td>
                 </tr>
