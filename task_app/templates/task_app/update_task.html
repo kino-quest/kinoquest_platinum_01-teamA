@@ -1,17 +1,17 @@
 {% extends 'task_app/base.html' %}
-{% block title %}新規作成 | メモセロ{% endblock %}
+{% block title %}問題編集 | メモセロ{% endblock %}
 {% block content %}
 <div class="container py-4">
     <div class="title d-flex justify-content-between align-items-center">
         <div class="flex-grow-1 text-center">
-            <h1 class="mb-0">新規作成</h1>
+            <h1 class="mb-0">問題編集</h1>
         </div>
         <a href="{% url 'home' %}" class="close-circle">×</a>
     </div>
     <div class="card">
         <div class="card-body">
             <div class="card-content">
-                <form method="post">
+                <form method="post" action="{% url 'update_task' task.id %}">
                     {% csrf_token %}
                     <div class="mb-3">問題
                         {{ form.task_name }}
@@ -38,7 +38,7 @@
                         {{ form.category_id.errors }}
                     </div>
                     <div class="create-btn-container">
-                        <button type="submit" class="create-btn">作成</button>
+                        <button type="submit" class="create-btn">更新</button>
                     </div>
                 </form>
             </div>

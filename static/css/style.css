@@ -254,6 +254,6 @@ ul.errorlist {
   z-index: 1;
 }
 .status-btn input[type=radio]:checked + span {
-  background: #6c63ff;
+  background: #656ED3;
   color: #fff;
 }

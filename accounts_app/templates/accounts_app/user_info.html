@@ -2,7 +2,12 @@
 {% block title %} 設定 | メモセロ {% endblock %}
 {% block content %}
 
-<h1 class="text-center">ユーザー情報設定</h1>
+<div class="title d-flex justify-content-between align-items-center px-3">
+    <div class="flex-grow-1 text-center">
+        <h1 class="mb-0">ユーザー情報設定</h1>
+    </div>
+    <a href="{% url 'home' %}" class="close-circle">×</a>
+</div>
 <div class="d-flex justify-content-center">
   <form action="{% url 'user_settings' %}" method="post">
     {% csrf_token %}

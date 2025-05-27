@@ -30,13 +30,30 @@ class TodoForm(forms.ModelForm):
         })
         
         # カテゴリーの設定
-        self.fields['category_id'] = forms.ChoiceField(
-            choices=[('', 'カテゴリーを選択してください')] + list(CategoryLevel.choices),
-            widget=forms.Select(attrs={
-                'class': 'form-control',
-                'style': 'width: 100%;'
-            }),
-        )
+        choices = [('', 'カテゴリーを選択してください')] + list(CategoryLevel.choices)
+        # 更新の場合(Update)
+        if self.instance and self.instance.pk:  
+            initial_category = str(self.instance.category_id.category_name) if self.instance.category_id else None
+            self.fields['category_id'] = forms.ChoiceField(
+                choices=choices,
+                initial=initial_category,
+                widget=forms.Select(attrs={
+                    'class': 'form-control',
+                    'style': 'width: 100%;'
+                })
+            )
+            # 初期値を上書き　フォームの初期値とフィールドの初期値が一致させるため
+            self.initial['category_id'] = initial_category
+            
+        # 新規作成の場合(Create)
+        else:  
+            self.fields['category_id'] = forms.ChoiceField(
+                choices=choices,
+                widget=forms.Select(attrs={
+                    'class': 'form-control',
+                    'style': 'width: 100%;'
+                })
+            )
 
     # フォームで選択された値を「Category」インスタンスに変換する
     def clean_category_id(self):
