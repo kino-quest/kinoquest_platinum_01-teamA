@@ -55,5 +55,14 @@ def delete_task(request, task_id):
 # 問題解く
 def solve_task(request, task_id):
     task = Todo.objects.get(id=task_id)
-    return render(request, 'task_app/solve_task.html', {'task': task})
+    if request.method == "POST":
+        # 理解度のみを更新
+        understanding = request.POST.get('understanding_status')
+        if understanding:
+            task.understanding_status = understanding
+            task.save()
+        return redirect('home')
+    else:
+        form = TodoForm(instance=task)
+    return render(request, 'task_app/solve_task.html', {'task': task, 'form': form})
 
