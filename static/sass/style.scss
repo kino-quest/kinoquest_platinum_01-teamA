@@ -197,3 +197,70 @@ ul.errorlist {
     color: #fff;
   }
 }
+
+//ポップアップ
+#understanding-popup-wrapper {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: none;
+}
+#understanding-popup-inside {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 400px;
+  margin: 100px auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+#understanding-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  cursor: pointer;
+  font-size: 24px;
+}
+.understanding-help {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid black;
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+  background: #fff;
+  margin-left: 5px;
+  transition: background 0.2s, color 0.2s;
+}
+.understanding-help:hover {
+  background: black;
+    color: white;
+  }
+
+// 一覧のスタイル
+.table {
+  border-collapse: separate; // セルの境界線を分離する
+  border-spacing: 0; // セル間のスペースを0にする
+}
+.table th, .table td {
+  border-right: none !important; // 縦線を消す
+  border-left: none !important;  // 縦線を消す
+  border-top: none !important;   // 上の線も消す
+  border-bottom: 2px solid black !important; // 横線を太く・色指定
+}
+
+
+.btn-outline-primary {
+  border-color: $color-tertiary;
+  color: white;
+}
+.btn-outline-primary:hover {
+  background-color: $color-tertiary;
+  color: white;
+}
