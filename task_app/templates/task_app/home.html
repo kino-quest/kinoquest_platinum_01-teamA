@@ -1,4 +1,5 @@
 {% extends 'task_app/base.html' %}
+{% load static %}
 {% block title %} ホーム | メモセロ {% endblock %}
 {% block content %}
 
@@ -14,26 +15,30 @@
           <div class="card">
             <div class="card-body">
               <p>問題一覧</p>
-              <table border="5" class="table table-bordered">
-                <tr>
-                    <th>問題名</th>
-                    <th>前に解いた日</th>
-                    <th>理解度</th>
-                    <th>カテゴリー</th>
-
-                </tr>
-                {% for task in tasks %} <!-- views.pyで格納したデータを展開。for文で1つずつ取り出す-->
-                <tr>
-                    <td>{{ task.task_name }}</td>
-                    <td>{{ task.solved_latest_date }}</td>
-                    <td>{{ task.understanding_status }}</td>
-                    <td>{{ task.category_id }}</td>
-                    <td><a href="{% url 'update_task' task.id %}" class="create-btn">編集</a></td>
-                    <td><a href="{% url 'delete_task' task.id %}" class="create-btn">削除</a></td>
-                    <td><a href="{% url 'solve_task' task.id %}" class="create-btn">解く</a></td>
-                </tr>
-                {% endfor %}
-            </table>
+              <table class="table table-bordered align-middle text-center">
+                <thead>
+                  <tr>
+                    <th class="fw-bold">問題名</th>
+                    <th class="fw-bold">目標日</th>
+                    <th class="fw-bold">理解度 <span class="understanding-help">？</span></th>
+                    <th class="fw-bold">カテゴリー</th>
+                    <th colspan="3"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for task in tasks %}
+                  <tr>
+                    <td class="fw-bold"> {{ task.task_name }} </td>
+                    <td class="fw-bold"> {{ task.solved_latest_date }} </td>
+                    <td> {{ task.understanding_status }} </td>
+                    <td class="fw-bold"> {{ task.category_id }} </td>
+                    <td><a href="{% url 'delete_task' task.id %}" class="btn btn-outline-primary btn-sm rounded-pill">削除</a></td>
+                    <td><a href="{% url 'update_task' task.id %}" class="btn btn-outline-primary btn-sm rounded-pill">編集</a></td>
+                    <td><a href="{% url 'solve_task' task.id %}" class="btn btn-outline-primary btn-sm rounded-pill">解く</a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -51,5 +56,22 @@
       </nav>
     </div>
   </footer>
+  <script src="{% static 'js/script.js' %}"></script>
+</div>
+
+<!-- 理解度説明ポップアップ -->
+<div id="understanding-popup-wrapper" style="display:none;">
+  <div id="understanding-popup-inside">
+    <span id="understanding-popup-close">×</span>
+    <h5>理解度とは？</h5>
+    <p>
+      理解度は、あなたがこの問題をどれだけ理解しているかを示す指標です。<br>
+      1：覚えていない<br>
+      2：うろ覚え<br>
+      3：やや不安<br>
+      4：覚えた<br>
+      など、自己評価で選択してください。
+    </p>
+  </div>
 </div>
 {% endblock%}
