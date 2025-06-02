@@ -1,0 +1,57 @@
+{% extends 'task_app/base.html' %}
+{% block title %}問題を解く | メモセロ{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container py-4">
+    <div class="title d-flex justify-content-between align-items-center">
+        <div class="flex-grow-1 text-center">
+            <h1 class="mb-0">問題を解く</h1>
+        </div>
+        <a href="{% url 'home' %}" class="close-circle">×</a>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-content">
+                <form method="post" action="{% url 'solve_task' task.id %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <h4>問題</h4>
+                        <p>{{ task.task_name }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <h4>カテゴリー</h4>
+                        <p>{{ task.category_id }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <h4>理解度</h4>
+                        <div class="understanding-status-btns">
+                            {% for radio in form.understanding_status %}
+                                <label class="status-btn">
+                                    {{ radio.tag }}
+                                    <span>{{ radio.choice_label }}</span>
+                                </label>
+                            {% endfor %}
+                            {{ form.understanding_status.errors }}
+                        </div>
+                    </div>
+                    <div class="check-btn-container d-flex justify-content-center gap-3">
+                        <button type="button"  id="check-btn" class="check-btn py-2 px-5">解答を確認する</button>
+                        <button type="submit" id="next-btn" class="check-btn py-2 px-5">次の問題へ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 解答を確認するポップアップ -->
+<script src="{% static 'js/script.js' %}"></script>
+<div id="check-popup-wrapper" style="display:none;">
+  <div id="check-popup-inside">
+    <span id="check-popup-close">×</span>
+    <h4>問題</h4>
+    <p>{{ task.task_name }}</p>
+    <h4>解答</h4>
+    <p>{{ task.task_answer }}</p>
+  </div>
+</div>
+{% endblock %}
