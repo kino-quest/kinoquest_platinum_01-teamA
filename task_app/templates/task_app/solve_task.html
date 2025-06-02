@@ -1,6 +1,7 @@
 {% extends 'task_app/base.html' %}
 {% block title %}問題を解く | メモセロ{% endblock %}
 {% block content %}
+{% load static %}
 <div class="container py-4">
     <div class="title d-flex justify-content-between align-items-center">
         <div class="flex-grow-1 text-center">
@@ -33,10 +34,6 @@
                             {{ form.understanding_status.errors }}
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <h4>解答を確認する</h4>
-                        <p>{{ task.task_answer }}</p>
-                    </div>
                     <div class="check-btn-container d-flex justify-content-center gap-3">
                         <button type="button"  id="check-btn" class="check-btn py-2 px-5">解答を確認する</button>
                         <button type="submit" id="next-btn" class="check-btn py-2 px-5">次の問題へ</button>
@@ -45,5 +42,16 @@
             </div>
         </div>
     </div>
+</div>
+<!-- 解答を確認するポップアップ -->
+<script src="{% static 'js/script.js' %}"></script>
+<div id="check-popup-wrapper" style="display:none;">
+  <div id="check-popup-inside">
+    <span id="check-popup-close">×</span>
+    <h4>問題</h4>
+    <p>{{ task.task_name }}</p>
+    <h4>解答</h4>
+    <p>{{ task.task_answer }}</p>
+  </div>
 </div>
 {% endblock %}

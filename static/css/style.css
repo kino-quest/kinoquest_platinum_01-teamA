@@ -380,3 +380,67 @@ ul.errorlist {
   background-color: #656ED3;
   color: white;
 }
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.pagination-btn {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #a6a0e9;
+  text-decoration: none;
+}
+
+.pagination-btn:hover {
+  color: #656ED3;
+  text-decoration: none;
+}
+
+#check-popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+}
+
+#check-popup-inside {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 600px;
+  margin: 300px auto;
+  -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+#check-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  cursor: pointer;
+  font-size: 24px;
+}

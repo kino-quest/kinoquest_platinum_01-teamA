@@ -2,13 +2,24 @@ from django.shortcuts import render, redirect
 from .forms import TodoForm
 from .models import Todo
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+import random
 
 # Create your views here.
 @login_required
 def home(request):
     print('home')
     tasks = Todo.objects.filter(user=request.user)
-    return render(request, 'task_app/home.html', {'tasks': tasks})
+        # ページネーション用に取得
+    items = Todo.objects.all().order_by('id')
+    # ページネーション設定
+    page_size = 3
+    paginator = Paginator(items, page_size)
+    # 今どのページかを表示するために取得
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number) 
+
+    return render(request, 'task_app/home.html', {'page_obj': page_obj, 'tasks': tasks})
 
 # プライバシーポリシー
 def privacy(request):
@@ -61,6 +72,12 @@ def solve_task(request, task_id):
         if understanding:
             task.understanding_status = understanding
             task.save()
+        
+        # 現在のタスク以外のランダムなタスクを取得
+        other_tasks = Todo.objects.exclude(id=task_id)
+        if other_tasks.exists():
+            random_task = random.choice(list(other_tasks))
+            return redirect('solve_task', task_id=random_task.id)
         return redirect('home')
     else:
         form = TodoForm(instance=task)

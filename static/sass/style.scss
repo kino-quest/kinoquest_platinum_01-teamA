@@ -293,3 +293,49 @@ ul.errorlist {
   background-color: $color-tertiary;
   color: white;
 }
+
+// ページネーション
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.pagination-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-secondary;
+  text-decoration: none;
+}
+.pagination-btn:hover {
+  color: $color-tertiary;
+  text-decoration: none;
+}
+
+// 解答を確認するポップアップ
+#check-popup-wrapper {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: none;
+}
+#check-popup-inside {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 600px;
+  margin: 300px auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+#check-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  cursor: pointer;
+  font-size: 24px;
+}
