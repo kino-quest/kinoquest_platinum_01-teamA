@@ -15,3 +15,4 @@
     2. 日付で出題
 
 ![アプリのログイン処理です](URL)
+![login_design](https://github.com/user-attachments/assets/265ec061-a117-40e3-b5e6-e1df9a96e1de)
