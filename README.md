@@ -28,7 +28,7 @@
 - データベース：PostgreSQL
 ## 開発環境周り
 - IDE：Visual Studio Code、Cursor
-- バー人管理：Git, GitHub
+- バージョン管理：Git, GitHub
 - デザイン：Figma
 - インフラ：Docker
 ## チームでの開発の流れ：遠藤
