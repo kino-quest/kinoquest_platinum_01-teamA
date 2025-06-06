@@ -1,7 +1,11 @@
 # kinoquest_platinum_01-teamA
 プラチナプラン1期生チームA
 
-## アプリ概要：中村
+<div align="center">
+    <img src="https://github.com/kino-quest/kinoquest_platinum_01-teamA/blob/main/static/images/favicon.png" alt="favicon" width="100" />
+</div>
+
+## アプリ概要：中村  
 ### アプリ名
 メモセロ
 由来：ラテン語の「memor（記憶する）」と「servare（保存する）」を組み合わせた造語
