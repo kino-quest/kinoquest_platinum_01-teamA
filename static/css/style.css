@@ -14,6 +14,7 @@ body {
 .btn {
   background-color: #a6a0e9;
 }
+
 .btn:hover {
   background-color: #b9b4f4;
 }
@@ -39,13 +40,13 @@ body {
   padding: 0;
   font-size: 20px;
   line-height: 1;
-  background-color: #656ED3;
+  background-color: #656ed3;
   color: white;
   text-decoration: none;
 }
 
 .close-circle:hover {
-  background-color: rgb(109, 123, 255);
+  background-color: #6d7bff;
   color: white;
   text-decoration: none;
 }
@@ -67,7 +68,7 @@ body {
   width: 50px;
   height: 30px;
   border-radius: 10%;
-  border: 1px solid #656ED3;
+  border: 1px solid #656ed3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,12 +82,12 @@ body {
   font-size: 20px;
   line-height: 1;
   background-color: white;
-  color: #656ED3;
+  color: #656ed3;
   text-decoration: none;
 }
 
 .create-btn:hover {
-  background-color: rgb(109, 123, 255);
+  background-color: #6d7bff;
   color: white;
   text-decoration: none;
 }
@@ -109,7 +110,7 @@ body {
   min-width: 120px;
   height: 40px;
   border-radius: 10%;
-  border: 1px solid #656ED3;
+  border: 1px solid #656ed3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,12 +124,12 @@ body {
   font-size: 20px;
   line-height: 1;
   background-color: white;
-  color: #656ED3;
+  color: #656ed3;
   text-decoration: none;
 }
 
 .check-btn:hover {
-  background-color: rgb(109, 123, 255);
+  background-color: #6d7bff;
   color: white;
   text-decoration: none;
 }
@@ -172,9 +173,11 @@ nav.navbar {
   margin-left: 10px;
   margin-right: 10px;
 }
+
 nav.navbar .navbar-left .navbar-logo img {
   height: 40px;
 }
+
 nav.navbar .navbar-right .user-edit {
   height: 40px;
   margin-right: 40px;
@@ -266,9 +269,11 @@ ul.errorlist {
   transition: background 0.2s, color 0.2s, border 0.2s;
   overflow: hidden;
 }
-.status-btn input[type=radio] {
+
+.status-btn input[type="radio"] {
   display: none;
 }
+
 .status-btn span {
   position: absolute;
   top: 0;
@@ -295,8 +300,9 @@ ul.errorlist {
   transition: background 0.2s, color 0.2s;
   z-index: 1;
 }
-.status-btn input[type=radio]:checked + span {
-  background: #656ED3;
+
+.status-btn input[type="radio"]:checked + span {
+  background: #656ed3;
   color: #fff;
 }
 
@@ -364,7 +370,8 @@ ul.errorlist {
   border-spacing: 0;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   border-right: none !important;
   border-left: none !important;
   border-top: none !important;
@@ -372,12 +379,12 @@ ul.errorlist {
 }
 
 .btn-outline-primary {
-  border-color: #656ED3;
+  border-color: #656ed3;
   color: white;
 }
 
 .btn-outline-primary:hover {
-  background-color: #656ED3;
+  background-color: #656ed3;
   color: white;
 }
 
@@ -411,7 +418,7 @@ ul.errorlist {
 }
 
 .pagination-btn:hover {
-  color: #656ED3;
+  color: #656ed3;
   text-decoration: none;
 }
 
@@ -444,3 +451,4 @@ ul.errorlist {
   cursor: pointer;
   font-size: 24px;
 }
+/*# sourceMappingURL=style.css.map */

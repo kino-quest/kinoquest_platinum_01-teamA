@@ -2,7 +2,7 @@
 
 $color-primary: rgba(175, 179, 255, 0.2);
 $color-secondary: #a6a0e9;
-$color-tertiary: #656ED3;
+$color-tertiary: #656ed3;
 $enable-grid-classes: True;
 $font-color: black;
 
@@ -30,7 +30,7 @@ body {
   text-decoration: none;
 }
 
-.close-circle{
+.close-circle {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -43,20 +43,21 @@ body {
   background-color: $color-tertiary;
   color: white;
   text-decoration: none;
-}
-.close-circle:hover{
-  background-color:rgb(109, 123, 255);
-  color: white;
-  text-decoration: none;
+  &:hover {
+    background-color: rgb(109, 123, 255);
+    color: white;
+    text-decoration: none;
+  }
 }
 
-.create-btn-container{
+.create-btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
 }
-.create-btn{
+
+.create-btn {
   width: 50px;
   height: 30px;
   border-radius: 10%;
@@ -70,21 +71,22 @@ body {
   background-color: white;
   color: $color-tertiary;
   text-decoration: none;
-}
-.create-btn:hover{
-  background-color:rgb(109, 123, 255);
-  color: white;
-  text-decoration: none;
+  &:hover {
+    background-color: rgb(109, 123, 255);
+    color: white;
+    text-decoration: none;
+  }
 }
 
 // 問題解く
-.check-btn-container{
+.check-btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
 }
-.check-btn{
+
+.check-btn {
   width: auto;
   min-width: 120px;
   height: 40px;
@@ -99,11 +101,11 @@ body {
   background-color: white;
   color: $color-tertiary;
   text-decoration: none;
-}
-.check-btn:hover{
-  background-color:rgb(109, 123, 255);
-  color: white;
-  text-decoration: none;
+  &:hover {
+    background-color: rgb(109, 123, 255);
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .header-container {
@@ -112,12 +114,14 @@ body {
   align-items: center;
   margin-bottom: 1rem;
 }
+
 .title {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
 }
+
 nav.navbar {
   display: flex;
   justify-content: space-between;
@@ -148,7 +152,7 @@ ul.errorlist {
   margin: 0 0 5px 0;
 }
 
-.add-task{
+.add-task {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,11 +169,10 @@ ul.errorlist {
   box-sizing: border-box;
   text-decoration: none;
   color: $font-color;
-}
-
-.add-task:hover {
-  background-color: #f0f0f0;
-  text-decoration: none;
+  &:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+  }
 }
 
 .card-content {
@@ -206,7 +209,10 @@ ul.errorlist {
 
   span {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,11 +236,15 @@ ul.errorlist {
 //ポップアップ
 #understanding-popup-wrapper {
   position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.3);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
   z-index: 1000;
   display: none;
 }
+
 #understanding-popup-inside {
   position: relative;
   background: #fff;
@@ -242,8 +252,9 @@ ul.errorlist {
   padding: 24px;
   max-width: 400px;
   margin: 100px auto;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
+
 #understanding-popup-close {
   position: absolute;
   top: 8px;
@@ -251,6 +262,7 @@ ul.errorlist {
   cursor: pointer;
   font-size: 24px;
 }
+
 .understanding-help {
   cursor: pointer;
   display: inline-flex;
@@ -267,28 +279,31 @@ ul.errorlist {
   margin-left: 5px;
   transition: background 0.2s, color 0.2s;
 }
+
 .understanding-help:hover {
   background: black;
-    color: white;
-  }
+  color: white;
+}
 
 // 一覧のスタイル
 .table {
   border-collapse: separate; // セルの境界線を分離する
   border-spacing: 0; // セル間のスペースを0にする
 }
-.table th, .table td {
+
+.table th,
+.table td {
   border-right: none !important; // 縦線を消す
-  border-left: none !important;  // 縦線を消す
-  border-top: none !important;   // 上の線も消す
+  border-left: none !important; // 縦線を消す
+  border-top: none !important; // 上の線も消す
   border-bottom: 2px solid black !important; // 横線を太く・色指定
 }
-
 
 .btn-outline-primary {
   border-color: $color-tertiary;
   color: white;
 }
+
 .btn-outline-primary:hover {
   background-color: $color-tertiary;
   color: white;
@@ -301,6 +316,7 @@ ul.errorlist {
   align-items: center;
   margin-bottom: 1rem;
 }
+
 .pagination-btn {
   width: 40px;
   height: 40px;
@@ -310,6 +326,7 @@ ul.errorlist {
   color: $color-secondary;
   text-decoration: none;
 }
+
 .pagination-btn:hover {
   color: $color-tertiary;
   text-decoration: none;
@@ -318,11 +335,15 @@ ul.errorlist {
 // 解答を確認するポップアップ
 #check-popup-wrapper {
   position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.3);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
   z-index: 1000;
   display: none;
 }
+
 #check-popup-inside {
   position: relative;
   background: #fff;
@@ -330,8 +351,9 @@ ul.errorlist {
   padding: 24px;
   max-width: 600px;
   margin: 300px auto;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
+
 #check-popup-close {
   position: absolute;
   top: 8px;
