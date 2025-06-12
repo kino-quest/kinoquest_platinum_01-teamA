@@ -8,7 +8,6 @@ import random
 # Create your views here.
 @login_required
 def home(request):
-    print('home')
     tasks = Todo.objects.filter(user=request.user)
         # ページネーション用に取得
     items = Todo.objects.filter(user=request.user).order_by('id')
@@ -34,10 +33,8 @@ def add_task(request):
     if request.method == 'POST':
         form = TodoForm(request.POST)
         if form.is_valid():
-            print("form.is_valid()")
             todo = form.save(commit=False)
             todo.user = request.user
-            print("save")
             todo.save()
             return redirect('home')
     else:
